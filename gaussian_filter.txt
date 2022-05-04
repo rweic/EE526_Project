@@ -1,1 +1,1 @@
-# Gaussian Filter
+Gaussian Filter
