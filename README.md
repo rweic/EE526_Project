@@ -7,4 +7,4 @@
 
 or running in the ORB_SLAM3 directory:
 
-Examples/Monocular/mono_euroc Vocabulary/ORBvoc.txt Examples/Monocular/EuRoC.yaml /home/rouwei/Documents/slam3/Datasets/EuRoc/MH1 /Examples/Monocular/EuRoC_TimeStamps/MH01.txt 
+Examples/Monocular/mono_euroc Vocabulary/ORBvoc.txt Examples/Monocular/EuRoC.yaml /home/rouwei/Documents/slam3/Datasets/EuRoc/MH1 Examples/Monocular/EuRoC_TimeStamps/MH01.txt 
