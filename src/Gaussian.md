@@ -1,12 +1,11 @@
 # Gaussian Filter
 
 ### Parameter
-Window size: 7*7 \n
-Sigma: 2
+Window size: 7*7 <br>
+Sigma: 2 <br>
 Matlab: h = fspecial('gaussian',[7 7],2)
 
 #### Gaussian Mask:
-h =
 
     0.0049    0.0092    0.0134    0.0152    0.0134    0.0092    0.0049
     0.0092    0.0172    0.0250    0.0283    0.0250    0.0172    0.0092
