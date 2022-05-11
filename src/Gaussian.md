@@ -1,7 +1,7 @@
 # Gaussian Filter
 
 ### Parameter
-Window size: 7*7
+Window size: 7*7 \n
 Sigma: 2
 Matlab: h = fspecial('gaussian',[7 7],2)
 
