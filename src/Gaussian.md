@@ -3,7 +3,7 @@
 ### Parameter
 Window size: 7*7 <br>
 Sigma: 2 <br>
-Matlab: h = fspecial('gaussian',[7 7],2)
+Matlab: h = fspecial('gaussian', [7 7], 2)
 
 #### Gaussian Mask:
 
