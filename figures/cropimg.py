@@ -5,9 +5,12 @@ from PIL import Image
 name = 'img'
 filename = 'jpeg/ori_' + name + '.jpg'
 im = Image.open(filename)
+
+print(im.size)
  
 # Size of the image in pixels (size of original image)
 width, height = im.size
+print(width, height)
  
 # Setting the points for cropped image
 left = 1000
@@ -16,7 +19,8 @@ right = left + min(640, width)
 bottom = top + min(480, height)
  
 # Cropped image of above dimension
-im1 = im.crop((left, top, right, bottom))
+im1 = im.crop((left, top, right, bottom)).convert('L')
+
  
 # Save the image
 im1 = im1.save('jpeg/' + name + '1.jpg')

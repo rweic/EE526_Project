@@ -1,5 +1,6 @@
 import binascii
 import re
+from PIL import Image
 #import cv2
 
 # read the input file
@@ -30,6 +31,7 @@ def imgToHex(file):
     string = re.sub('0x', '', string) # Replace '0x' with 'x' for your needs
     return string
 output = imgToHex(filename)
+print(len(output))
 
 # savefile
 save_dir = 'bf/' + name + '.txt'
