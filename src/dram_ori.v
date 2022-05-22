@@ -27,9 +27,9 @@ end
 
 initial
 begin
-  /*for(i = 0; i < A_DEPTH; i = i + 1)
-    memory[i] = 0;*/
-  $readmemh("../../figures/bf/img1.mem", memory);
+  for(i = 0; i < A_DEPTH; i = i + 1)
+    memory[i] = 0;
+  $readmemh("../../figures/bf/img1.txt", memory, 0, 55266);
   end
 
 endmodule
