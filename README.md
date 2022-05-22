@@ -5,7 +5,7 @@
 - figures/convert_binary.py: write the binary values into txt
 - figures/bin2jpg.py: regenerate the figure, from the one got from convert_binary.py
 - figures/jpg2intensity.py: write the intensity into txt file
-- 
+- figures/itensity2img.py: regenerate the figure, from the intensity array (use together with jpg2intensity.py)
 
 ### Makefile
 - Makefile for simulation: test/result
