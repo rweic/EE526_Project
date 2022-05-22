@@ -13,7 +13,8 @@ VIEWER = gtkwave
 compile : $(TESTBENCH) $(SRC)
 	$(COMPILER) $(SRC) $(TESTBENCH) -o $(COUTPUT)
 
-simulate: $(COUTPUT)
+simulate: $(TESTBENCH) $(SRC)
+	$(COMPILER) $(SRC) $(TESTBENCH) -o $(COUTPUT)
 	$(SIMULATOR) $(COUTPUT)
 
 display: $(TBOUTPUT)

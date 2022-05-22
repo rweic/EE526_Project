@@ -3,8 +3,8 @@ module dram_ori (
   input clk,
   input ren,
   input wen,
-  input [19:0] raddr,
-  input [19:0] waddr,
+  input [18:0] raddr,
+  input [18:0] waddr,
   input [7:0] wdata,
   
   // outputs
@@ -12,7 +12,7 @@ module dram_ori (
 );
 
 parameter D_WIDTH =  8;
-parameter A_WIDTH =  20;
+parameter A_WIDTH =  19;
 parameter A_DEPTH = (1 << A_WIDTH);
 
 integer i;
@@ -29,7 +29,7 @@ initial
 begin
   for(i = 0; i < A_DEPTH; i = i + 1)
     memory[i] = 0;
-  $readmemh("../../figures/bf/img1.txt", memory, 0, 55266);
+  $readmemh("../../figures/bf/img1.txt", memory, 0, 307199);
   end
 
 endmodule

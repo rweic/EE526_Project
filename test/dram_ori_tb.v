@@ -1,8 +1,8 @@
 `timescale 1 ns/ 1 ps
 module dram_ori_tb();
 reg clk, ren, wen;
-reg [19:0] raddr;
-reg [19:0] waddr;
+reg [18:0] raddr;
+reg [18:0] waddr;
 reg [7:0] wdata;
 wire [7:0] rdata;
 
@@ -42,14 +42,14 @@ initial
     // test 4
     ren = 1'b1;
     wen = 1'b0;
-    raddr = 20'b1101011111100001;
+    raddr = 20'b1001010111111111110;
     waddr = 20'b0;
     wdata = 8'b0;
     #10
     // test 5
     ren = 1'b1;
     wen = 1'b0;
-    raddr = 20'b1101011111100010;
+    raddr = 20'b1001010111111111111;
     waddr = 20'b0;
     wdata = 8'b0;
     #20
