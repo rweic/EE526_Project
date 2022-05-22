@@ -1,8 +1,8 @@
 # FILES
-SRC = ../../src/gaussian_core.v ../../src/binary_test.v
-TESTBENCH = ../binary_test_tb.v
+SRC = ../../src/gaussian_core.v ../../src/binary_test.v ../../src/dram.v
+TESTBENCH = ../dram_tb.v
 COUTPUT = compiler.out
-TBOUTPUT = *.vcd
+TBOUTPUT = dram_tb.vcd
 			
 #TOOLS
 COMPILER = iverilog

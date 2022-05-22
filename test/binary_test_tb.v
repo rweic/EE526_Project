@@ -70,7 +70,7 @@ initial
     x8 = 8'b11110001;
     y8 = 8'b01100011;
     #20
-    $finish ; // This causes the simulation to end.  Without, it would go on..and on.
+    $finish;
   end
   
 endmodule

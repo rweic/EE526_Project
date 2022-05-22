@@ -24,7 +24,7 @@ initial
     // test 3
     input_pixels = {{13{8'b11100011}}, {13{8'b10001111}},{23{8'b00011101}}};
     #20
-    $finish ; // This causes the simulation to end.  Without, it would go on..and on.
+    $finish;
   end
   
 endmodule
