@@ -15,6 +15,12 @@ orb = cv2.ORB_create()
 # Detect the keypoints and compute descriptors
 queryKeypoints, queryDescriptors = orb.detectAndCompute(query_img_bw,None)
 trainKeypoints, trainDescriptors = orb.detectAndCompute(train_img_bw,None)
+
+# printing
+
+print(len(queryKeypoints)) 
+print(queryDescriptors.shape) 
+print(queryDescriptors)
  
 # Match points
 matcher = cv2.BFMatcher()

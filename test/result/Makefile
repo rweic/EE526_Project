@@ -1,8 +1,8 @@
 # FILES
-SRC = ../../src/*.v #gaussian_core.v
-TESTBENCH = ../gaussian_core_tb.v
+SRC = ../../src/gaussian_core.v ../../src/binary_test.v
+TESTBENCH = ../binary_test_tb.v
 COUTPUT = compiler.out
-TBOUTPUT = gaussian_core_tb.vcd
+TBOUTPUT = *.vcd
 			
 #TOOLS
 COMPILER = iverilog
