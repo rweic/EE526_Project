@@ -1,8 +1,8 @@
 # FILES
-SRC = ../../src/gaussian_core.v ../../src/binary_test.v ../../src/dram_ori.v
-TESTBENCH = ../dram_ori_tb.v
+SRC = ../../src/gaussian_core.v ../../src/binary_test.v ../../src/dram_ori.v ../../src/dram.v ../../src/gaussian_ctrl.v 
+TESTBENCH = ../gaussian_ctrl_tb.v
 COUTPUT = compiler.out
-TBOUTPUT = dram_ori_tb.vcd
+TBOUTPUT = gaussian_ctrl_tb.vcd
 			
 #TOOLS
 COMPILER = iverilog

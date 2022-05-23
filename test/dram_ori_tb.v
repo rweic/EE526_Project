@@ -4,10 +4,10 @@ reg clk, ren, wen;
 reg [18:0] raddr;
 reg [18:0] waddr;
 reg [7:0] wdata;
-wire [7:0] rdata;
-reg writefile;
+wire [391:0] rdata;
+//reg writefile;
 
-dram_ori dr(clk, ren, wen, raddr, waddr, wdata, writefile, rdata);
+dram_ori dr(clk, ren, wen, raddr, waddr, wdata, rdata);
 
 initial begin
 	clk = 1'b0;
@@ -25,7 +25,7 @@ initial
     raddr = 20'b0;
     waddr = 20'b0;
     wdata = 8'b0;
-    writefile = 1'b0;
+    //writefile = 1'b0;
     #10
     // test 2
     ren = 1'b1;
@@ -56,7 +56,7 @@ initial
     wdata = 8'b0;
     #10
     
-    writefile = 1'b1;
+    //writefile = 1'b1;
     #20
     $finish;
   end
