@@ -4,7 +4,9 @@ from PIL import Image
 
 import matplotlib.pyplot as plt
 
-with open('bf/img1.txt') as file:
+#filename = 'bf/img1.txt'
+filename = '../test/result/out.txt'
+with open(filename) as file:
     data = file.read()
 
 data = re.sub('\n', '', data)

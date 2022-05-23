@@ -1,5 +1,5 @@
 $date
-	Sun May 22 13:58:17 2022
+	Sun May 22 14:36:08 2022
 $end
 $version
 	Icarus Verilog
@@ -15,25 +15,30 @@ $var reg 1 $ ren $end
 $var reg 19 % waddr [18:0] $end
 $var reg 8 & wdata [7:0] $end
 $var reg 1 ' wen $end
+$var reg 1 ( writefile $end
 $scope module dr $end
 $var wire 1 " clk $end
-$var wire 19 ( raddr [18:0] $end
+$var wire 19 ) raddr [18:0] $end
 $var wire 1 $ ren $end
-$var wire 19 ) waddr [18:0] $end
-$var wire 8 * wdata [7:0] $end
+$var wire 19 * waddr [18:0] $end
+$var wire 8 + wdata [7:0] $end
 $var wire 1 ' wen $end
-$var reg 8 + rdata [7:0] $end
-$var integer 32 , i [31:0] $end
+$var wire 1 ( writefile $end
+$var reg 8 , rdata [7:0] $end
+$var integer 32 - i [31:0] $end
+$var integer 32 . out [31:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b10000000000000000000 ,
+bx .
+b10000000000000000000 -
+bx ,
 bx +
 bx *
 bx )
-bx (
+x(
 x'
 bx &
 bx %
@@ -50,51 +55,59 @@ $end
 1"
 #20000
 0"
+0(
 b0 &
-b0 *
+b0 +
 b0 %
-b0 )
+b0 *
 b0 #
-b0 (
+b0 )
 0'
 1$
 #25000
 b11000110 !
-b11000110 +
+b11000110 ,
 1"
 #30000
 0"
 b1 #
-b1 (
+b1 )
 #35000
 b10111101 !
-b10111101 +
+b10111101 ,
 1"
 #40000
 0"
 b10 #
-b10 (
+b10 )
 #45000
 b10111010 !
-b10111010 +
+b10111010 ,
 1"
 #50000
 0"
 b1001010111111111110 #
-b1001010111111111110 (
+b1001010111111111110 )
 #55000
 b11111000 !
-b11111000 +
+b11111000 ,
 1"
 #60000
 0"
 b1001010111111111111 #
-b1001010111111111111 (
+b1001010111111111111 )
 #65000
 1"
 #70000
+b1001011000000000000 -
+b10000000000000000000000000000011 .
 0"
+1(
 #75000
 1"
 #80000
+0"
+#85000
+1"
+#90000
 0"
