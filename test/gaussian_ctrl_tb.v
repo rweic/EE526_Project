@@ -20,7 +20,8 @@ initial
     // test 2
     rst = 1'b0;
     // test 3
-    #1300000
+    //#1300000
+    #2000
     $finish ; // This causes the simulation to end.  Without, it would go on..and on.
   end
   
