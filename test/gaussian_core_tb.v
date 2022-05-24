@@ -4,7 +4,7 @@ reg clk;
 reg [391:0] input_pixels;
 wire [7:0] output_pixel;
 
-gaussian_core gc (input_pixels, output_pixel);
+gaussian_core gc (clk, input_pixels, output_pixel);
 
 initial begin
 	clk = 1'b0;
