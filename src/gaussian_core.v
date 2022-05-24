@@ -1,13 +1,19 @@
 module gaussian_core (
-  // inputs
-  input [391:0] input_pixels,
-  // outputs
-  output reg [7:0] result
+  clk,
+  input_pixels,
+  result
 );
 
-
+// parameters
 parameter BITS = 8;
 parameter WIDTH = 7;
+
+// inputs
+input clk;
+input [391:0] input_pixels;
+// outputs
+output reg [7:0] result;
+
 // Declare the gaussian mask
 integer M[0:WIDTH-1][0:WIDTH-1];
 
@@ -16,8 +22,7 @@ reg [BITS-1:0] A [0:WIDTH-1][0:WIDTH-1];
 integer i,j;
 integer sum;
 
-
-always@(input_pixels)
+always@(*)
   begin
     {M[0][0],M[0][1],M[0][2],M[0][3],M[0][4],M[0][5],M[0][6],
      M[1][0],M[1][1],M[1][2],M[1][3],M[1][4],M[1][5],M[1][6],
@@ -41,14 +46,11 @@ always@(input_pixels)
      A[4][0],A[4][1],A[4][2],A[4][3],A[4][4],A[4][5],A[4][6],
      A[5][0],A[5][1],A[5][2],A[5][3],A[5][4],A[5][5],A[5][6],
      A[6][0],A[6][1],A[6][2],A[6][3],A[6][4],A[6][5],A[6][6]} = input_pixels;
-     //$display(M[0][0]);
-     //$display(A[0][0]);
     
     sum = 0;
     for (i=0; i<WIDTH; i++) begin
       for (j=0; j<WIDTH; j++) begin
         sum += A[i][j] * M[i][j];
-        //$display(sum);
        end
      end
      result = (sum >> 10);  // result = sum/(2^10)  
