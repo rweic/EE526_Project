@@ -1,7 +1,7 @@
 # EE526_Project
 
 ### Image Convert
-- figures/cropimg.py: cut to (480, 640), turn to grayscale
+- figures/cropimg.py: cut to (720, 1280), turn to grayscale
 - figures/convert_binary.py: write the binary values into txt
 - figures/bin2jpg.py: regenerate the figure, from the one got from convert_binary.py
 - figures/jpg2intensity.py: write the intensity into txt file
