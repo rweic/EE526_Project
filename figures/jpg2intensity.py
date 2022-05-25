@@ -14,8 +14,8 @@ print(img.shape)
 #print(img)
 
 str = ''
-for i in range(480):
-    for j in range(640):
+for i in range(720):
+    for j in range(1280):
         hexVal = hex(img[i][j])
         if(len(hexVal) == 3):
             hexVal = '0x0' + hexVal[2]

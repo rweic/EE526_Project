@@ -7,7 +7,7 @@ module gaussian_top (
 // parameters
 parameter BITS = 8;
 parameter WIDTH = 7;
-parameter ADDRLEN = 19;
+parameter ADDRLEN = 21;
 parameter MASKLEN = 392;
 
 // inputs
@@ -57,7 +57,7 @@ gaussian_ctrl gctrl (.clk(clk),
                      .writefile(writefile));
 
 always @(posedge clk) begin
-  input_pixels = rdata1;
+  input_pixels <= rdata1;
 end
 
 always @(posedge clk) begin

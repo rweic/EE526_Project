@@ -13,10 +13,10 @@ module gaussian_ctrl (
 // parameters
 parameter BITS = 8;
 parameter WIDTH = 7;
-parameter ADDRLEN = 19;
+parameter ADDRLEN = 21;
 parameter MASKLEN = 392;
-parameter ROW = 480;
-parameter COL = 640;
+parameter ROW = 720;
+parameter COL = 1280;
 integer i = 0;
 integer j = 0;
 
@@ -38,31 +38,34 @@ wire [MASKLEN-1:0] rdata1, rdata2;
 reg  [MASKLEN-1:0] input_pixels;
 
 always @(posedge clk) begin
+  raddr <= 1280 * i + j;
+  waddr <= 1280 * (i+3) + (j+3);
+end
+
+always @(posedge clk) begin
   if (rst) begin
     ren1 <= 1'b0;
     ren2 <= 1'b0;
     wen1 <= 1'b0;
     wen2 <= 1'b0; 
     writefile <= 1'b0;
-    raddr <= 19'b0000000000000000000;
-    waddr <= 19'b0000000000000000000;
+    //raddr <= 21'b0000000000000000000;
+    //waddr <= 21'b        0000000000000000000;
     i <= 0;
     j <= 0;
   end
-  else if (i < ROW - WIDTH + 1) begin
-    ren1 <= 1'b1;
-    ren2 <= 1'b0;
-    wen1 <= 1'b0;
-    wen2 <= 1'b1;
-    writefile <= 1'b0;
-    if (j < COL - WIDTH + 1) begin
-      raddr <= 640 * i + j;
-      waddr <= 640 * (i+3) + (j+3);
+  else if (i < ROW-WIDTH+1) begin
+    if (j < COL-WIDTH) begin
+      ren1 <= 1'b1;
+      ren2 <= 1'b0;
+      wen1 <= 1'b0;
+      wen2 <= 1'b1;
+      writefile <= 1'b0;
       j <= j + 1;
     end
     else begin
-      raddr <= 19'b0000000000000000000;
-      waddr <= 19'b0000000000000000000;
+      //raddr <= 21'b0000000000000000000;
+      //waddr <= 21'b0000000000000000000;
       i <= i+1;
       j <= 0;
     end
@@ -73,8 +76,8 @@ always @(posedge clk) begin
     wen1 <= 1'b0;
     wen2 <= 1'b0;
     writefile = 1'b1;
-    raddr <= 19'b0000000000000000000;
-    waddr <= 19'b0000000000000000000;
+    //raddr <= 21'b0000000000000000000;
+    //waddr <= 21'b0000000000000000000;
   end
 end
   

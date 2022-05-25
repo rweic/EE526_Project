@@ -11,7 +11,7 @@ module dram (
 
 // parameters
 parameter D_WIDTH = 8;
-parameter A_WIDTH = 19;
+parameter A_WIDTH = 21;
 parameter A_DEPTH = (1 << A_WIDTH);
 parameter MASKLEN = 392;
 
@@ -45,7 +45,7 @@ end
 
 always @(posedge writefile) begin
   out = $fopen("filtered/out.txt","w");
-  for (i=0; i<307200; i=i+1)
+  for (i=0; i<921600; i=i+1)
     $fwrite(out,"%h\n",memory[i]);
   $fclose(out);
 end

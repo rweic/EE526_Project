@@ -13,7 +13,7 @@ data = re.sub('\n', '', data)
 data = [int(data[i:i+2],16) for i in range(0,len(data),2)]
 print(len(data))
 
-data = np.reshape(data, (480, 640))
+data = np.reshape(data, (720, 1280))
 print(data.shape)
 
 

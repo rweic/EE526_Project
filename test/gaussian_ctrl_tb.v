@@ -1,19 +1,32 @@
 `timescale 1 ns/ 1 ps
-module gaussian_top_tb();
+module gaussian_ctrl_tb();
 reg clk, rst;
+wire ren1, wen1, ren2, wen2;
+wire [20:0] raddr;
+wire [20:0] waddr;
 wire done;
 
-gaussian_top gt (clk, rst, done);
+gaussian_ctrl gctrl (
+  clk,
+  rst,
+  raddr,
+  waddr,
+  ren1,
+  wen1,
+  ren2,
+  wen2,
+  writefile
+);
 
 initial begin
 	clk = 1'b0;
-	repeat (2000000) clk = #2 ~clk;
+	repeat (1000000) clk = #2 ~clk;
 end
 
 initial
   begin
-    $dumpfile("gaussian_top_tb.vcd");
-    $dumpvars(0, gaussian_top_tb);
+    $dumpfile("gaussian_ctrl_tb.vcd");
+    $dumpvars(0, gaussian_ctrl_tb);
     // test 1
     rst = 1'b1;
     #10
