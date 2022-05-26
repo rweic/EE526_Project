@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 import re
 
-name = 'img1'
+name = 'img22'
 filename = 'jpeg/' + name + '.jpg'
 
 img = Image.open(filename)

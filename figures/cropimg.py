@@ -2,7 +2,7 @@
 from PIL import Image
  
 # Opens a image in RGB mode
-name = 'img'
+name = 'img2'
 filename = './jpeg/ori_' + name + '.jpg'
 im = Image.open(filename)
 
@@ -27,9 +27,9 @@ im1 = im1.save('jpeg/' + name + '1.jpg')
 
 
 # Second img
-left = 800
-top = 900
+left = 1030
+top = 960
 right = left + min(1280, width)
 bottom = top + min(720, height)
-im2 = im.crop((left, top, right, bottom))
+im2 = im.crop((left, top, right, bottom)).convert('L')
 im2 = im2.save('jpeg/' + name + '2.jpg')
