@@ -19,16 +19,18 @@ trainKeypoints, trainDescriptors = orb.detectAndCompute(train_img_bw,None)
 # printing
 
 print(len(queryKeypoints)) 
+print(queryKeypoints) 
+
+
 print(queryDescriptors.shape) 
-print(queryDescriptors)
+print(type(queryDescriptors[0][0]))
  
 # Match points
 matcher = cv2.BFMatcher()
 matches = matcher.match(queryDescriptors,trainDescriptors)
   
 # draw the matches
-final_img = cv2.drawMatches(img1, queryKeypoints,
-img2, trainKeypoints, matches[:20],None)
+final_img = cv2.drawMatches(img1, queryKeypoints, img2, trainKeypoints, matches[:20],None)
   
 final_img = cv2.resize(final_img, (2688,4032))
  

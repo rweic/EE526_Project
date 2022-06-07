@@ -5,7 +5,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 #filename = 'bf/img1.txt'
-filename = '../test/result/filtered/out.txt'
+filename = '../test/result/filtered/out22.txt'
 with open(filename) as file:
     data = file.read()
 
