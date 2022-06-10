@@ -3,7 +3,7 @@ module gaussian_ctrl (
   rst,
   outpixeladdr,
   output_pixel,
-  renbuffer,
+  //renbuffer,
   wenbuffer,
   writefile
 );
@@ -24,7 +24,7 @@ input rst;
 // outputs
 output reg [ADDRLEN-1:0] outpixeladdr;
 output wire [BITS-1:0] output_pixel;
-output reg renbuffer;
+//output reg renbuffer;
 output reg wenbuffer;
 output reg writefile;
 
@@ -59,7 +59,7 @@ end
 always @(posedge clk) begin
   if (rst) begin
     ren1 <= 1'b0;
-    renbuffer <= 1'b0;
+    //renbuffer <= 1'b0;
     wen1 <= 1'b0;
     wen2 <= 1'b0; 
     wf_buf <= 1'b0;
@@ -70,7 +70,7 @@ always @(posedge clk) begin
     if (j < COL-WIDTH) begin
       // shift right by one
       ren1 <= 1'b1;
-      renbuffer <= 1'b0;
+      //renbuffer <= 1'b0;
       wen1 <= 1'b0;
       wen2 <= 1'b1;
       writefile <= 1'b0;
@@ -79,7 +79,7 @@ always @(posedge clk) begin
     else begin
       // start a new line
       ren1 <= 1'b1;
-      renbuffer <= 1'b0;
+      //renbuffer <= 1'b0;
       wen1 <= 1'b0;
       wen2 <= 1'b1;
       writefile <= 1'b0;
@@ -89,7 +89,7 @@ always @(posedge clk) begin
   end
   else begin
     ren1 <= 1'b0;
-    renbuffer <= 1'b0;
+    //renbuffer <= 1'b0;
     wen1 <= 1'b0;
     wen2 <= 1'b0;
     wf_buf = 1'b1;

@@ -24,17 +24,20 @@ with open("bf/x_2.csv") as file_name:
     x2 = np.loadtxt(file_name, delimiter=",")
 with open("bf/y_2.csv") as file_name:
     y2 = np.loadtxt(file_name, delimiter=",")
+with open("bf/size_1.csv") as file_name:
+    size1 = np.loadtxt(file_name, delimiter=",")
+with open("bf/size_2.csv") as file_name:
+    size2 = np.loadtxt(file_name, delimiter=",")
 
 print(len(x1), len(y1))
 print(len(x2), len(y2))
-
 queryKeypoints = [] 
 for i in range(len(x1)):
-     queryKeypoints.append(cv2.KeyPoint(x1[i], y1[i], 7))
+     queryKeypoints.append(cv2.KeyPoint(x1[i], y1[i], 1))
      
 trainKeypoints = []  
 for i in range(len(x2)):
-     trainKeypoints.append(cv2.KeyPoint(x2[i], y2[i], 7))
+     trainKeypoints.append(cv2.KeyPoint(x2[i], y2[i], 1))
      
      
 with open("bf/brief_out1.txt") as file_name:
@@ -57,10 +60,10 @@ matcher = cv2.BFMatcher()
 matches = matcher.match(queryDescriptors,trainDescriptors)
   
 # draw the matches
-final_img = cv2.drawMatches(img1, queryKeypoints, img2, trainKeypoints, matches[50:300],None)
+final_img = cv2.drawMatches(img1, queryKeypoints, img2, trainKeypoints, matches[0:50],None)
 
-final_img = cv2.resize(final_img, (2688,4032))
+final_img = cv2.resize(final_img, (2560,720))
  
 # Show the final image
 cv2.imshow("Matches", final_img)
-cv2.waitKey(300000)
+cv2.waitKey(20000)
