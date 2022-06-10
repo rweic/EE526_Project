@@ -1,3 +1,4 @@
+// This is DRAM 2 which stores the filtered image
 module dram (
   clk,
   ren,
@@ -5,7 +6,7 @@ module dram (
   raddr,
   waddr,
   wdata,
-  writefile,
+  writefile,  // signal showing the gaussian part is done
   rdata
 );
 

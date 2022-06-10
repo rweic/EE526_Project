@@ -1,3 +1,5 @@
+// This is the binary test for a single bit
+// The part commented out is binary test for 8 bits
 module binary_test (
   // inputs
   /*x1,

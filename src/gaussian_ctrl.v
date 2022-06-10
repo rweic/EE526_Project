@@ -1,3 +1,4 @@
+// This file generate the control signals for gaussian part
 module gaussian_ctrl (
   clk,
   rst,

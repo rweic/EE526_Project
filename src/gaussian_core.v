@@ -1,3 +1,4 @@
+// This part takes in the Gaussian mask and the 7*7 block data from img, and output the filtered pixel
 module gaussian_core (
   clk,
   input_pixels,

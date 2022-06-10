@@ -1,3 +1,4 @@
+// This is the DRAM 1 which stores the original (unfiltered) image
 module dram_ori (
   clk,
   ren,
@@ -49,7 +50,7 @@ end
 initial begin
   for(i = 0; i < A_DEPTH; i = i + 1)
     memory[i] = 8'hff;
-  $readmemh("../../figures/bf/img21.txt", memory, 0, 921599);
+  $readmemh("../../figures/binary_file/img21.txt", memory, 0, 921599);
 end
 
 endmodule

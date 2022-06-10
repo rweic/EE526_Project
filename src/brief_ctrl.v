@@ -1,3 +1,4 @@
+// Control block for brief
 module brief_ctrl (
   clk,
   rst,
@@ -44,8 +45,7 @@ wire [BITS-1:0] y1 [0:PNUM-1];
 wire [BITS-1:0] x2 [0:PNUM-1];
 wire [BITS-1:0] y2 [0:PNUM-1];
 
-//reg [BITS-1:0] patch [0:30][0:30];
-// Declare and initialize the position of the points (x1, y1, x2, y2)
+// Declare and initialize the pattern of the points (x1, y1, x2, y2)
 wire [31:0] pos [0:256*4];
 assign {pos[0], pos[1], pos[2], pos[3], pos[4], pos[5], pos[6], pos[7],
         pos[8], pos[9], pos[10], pos[11], pos[12], pos[13], pos[14], pos[15], 
@@ -108,7 +108,7 @@ assign {pos[0], pos[1], pos[2], pos[3], pos[4], pos[5], pos[6], pos[7],
         pos[464], pos[465], pos[466], pos[467], pos[468], pos[469], pos[470], pos[471], 
         pos[472], pos[473], pos[474], pos[475], pos[476], pos[477], pos[478], pos[479], 
         pos[480], pos[481], pos[482], pos[483], pos[484], pos[485], pos[486], pos[487], 
-        pos[488], pos[489], pos[490], pos[491], pos[492], pos[493], pos[494], pos[495], 
+        pos[488], pos[489pos], pos[490], pos[491], pos[492], pos[493], pos[494], pos[495], 
         pos[496], pos[497], pos[498], pos[499], pos[500], pos[501], pos[502], pos[503], 
         pos[504], pos[505], pos[506], pos[507], pos[508], pos[509], pos[510], pos[511], 
         pos[512], pos[513], pos[514], pos[515], pos[516], pos[517], pos[518], pos[519], 
@@ -140,7 +140,7 @@ assign {pos[0], pos[1], pos[2], pos[3], pos[4], pos[5], pos[6], pos[7],
         pos[720], pos[721], pos[722], pos[723], pos[724], pos[725], pos[726], pos[727], 
         pos[728], pos[729], pos[730], pos[731], pos[732], pos[733], pos[734], pos[735], 
         pos[736], pos[737], pos[738], pos[739], pos[740], pos[741], pos[742], pos[743], 
-        pos[744], pos[745], pos[746], pos[747], pos[748], pos[749], pos[750], pos[751], 
+        pos[744], pos[745pos], pos[746], pos[747], pos[748], pos[749], pos[750], pos[751], 
         pos[752], pos[753], pos[754], pos[755], pos[756], pos[757], pos[758], pos[759], 
         pos[760], pos[761], pos[762], pos[763], pos[764], pos[765], pos[766], pos[767], 
         pos[768], pos[769], pos[770], pos[771], pos[772], pos[773], pos[774], pos[775], 
@@ -420,7 +420,7 @@ assign {pos[0], pos[1], pos[2], pos[3], pos[4], pos[5], pos[6], pos[7],
                     -32'd1, -32'd6, -32'd1, -32'd1/*mean (0.10045), correlation (0.552714)*/,
                     32'd9, 32'd5, 32'd11, -32'd2/*mean (0.100686), correlation (0.552594)*/,
                     32'd11, -32'd3, 32'd12, -32'd8/*mean (0.101091), correlation (0.532394)*/,
-                    32'd3, 32'd0, 32'd3, 32'd5/*mean (0.101147), correlation (0.525576)*/,
+                    32'd3, 32'd0, 32'd3, 32'd5/*mean (0.101147), correlation (0.525576)*/,pos
                     -32'd1, 32'd4, 32'd0, 32'd10/*mean (0.105263), correlation (0.531498)*/,
                     32'd3, -32'd6, 32'd4, 32'd5/*mean (0.110785), correlation (0.540491)*/,
                     -32'd13, 32'd0, -32'd10, 32'd5/*mean (0.112798), correlation (0.536582)*/,
@@ -491,7 +491,7 @@ assign {p[0][0],  p[0][1],  p[0][2],  p[0][3],  p[0][4],  p[0][5],  p[0][6],  p[
         p[13][8],  p[13][9],  p[13][10], p[13][11], p[13][12], p[13][13], p[13][14], p[13][15], 
         p[13][16], p[13][17], p[13][18], p[13][19], p[13][20], p[13][21], p[13][22], p[13][23], 
         p[13][24], p[13][25], p[13][26], p[13][27], p[13][28], p[13][29], p[13][30],
-        p[14][0],  p[14][1],  p[14][2],  p[14][3],  p[14][4],  p[14][5],  p[14][6],  p[14][7], 
+        p[14][0],  p[14][1],  p[14][2],  p[14][3],  p[14][4],  p[14][5],  p[14][6],  p[14][7], pos
         p[14][8],  p[14][9],  p[14][10], p[14][11], p[14][12], p[14][13], p[14][14], p[14][15], 
         p[14][16], p[14][17], p[14][18], p[14][19], p[14][20], p[14][21], p[14][22], p[14][23], 
         p[14][24], p[14][25], p[14][26], p[14][27], p[14][28], p[14][29], p[14][30],

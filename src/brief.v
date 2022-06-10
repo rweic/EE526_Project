@@ -1,9 +1,8 @@
+// top level module for the gaussian + brief part
 module brief (
-  // inputs
   clk,
   rst,
   fast_en,
-  // outputs
   written,
   x,
   y,

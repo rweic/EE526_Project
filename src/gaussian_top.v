@@ -1,3 +1,4 @@
+// Top module for the gaussian blur, merged with brief later
 module gaussian_top (
   clk,
   rst,
